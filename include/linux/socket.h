@@ -58,6 +58,7 @@ struct __kernel_sockaddr_storage {
 
 typedef unsigned short sa_family_t;
 
+#ifndef __ANDROID__
 struct sockaddr {
  sa_family_t sa_family;
  char sa_data[14];
@@ -248,6 +249,8 @@ struct ucred {
 #define SOL_TIPC 271
 
 #define IPX_TYPE 1
+
+#endif /* if not android */
 
 #endif
 #endif
