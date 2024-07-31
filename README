@@ -23,6 +23,13 @@ forced to use them.
 You can find several example files under examples/ that you can compile by
 invoking `make check'.
 
+= Contributing =
+
+Please submit any patches to <netfilter-devel@vger.kernel.org>.
+
+The contributions should broadly follow the Linux Kernel process, as detailed
+in https://www.kernel.org/doc/html/latest/process/submitting-patches.html
+
 --
 08/sep/2010
 Pablo Neira Ayuso <pablo@netfilter.org>
