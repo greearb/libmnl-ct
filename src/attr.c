@@ -390,6 +390,28 @@ EXPORT_SYMBOL uint64_t mnl_attr_get_u64(const struct nlattr *attr)
 }
 
 /**
+ * mnl_attr_get_uint - returns 64-bit unsigned integer attribute.
+ * \param attr pointer to netlink attribute
+ *
+ * This function returns the 64-bit value of the attribute payload.
+ */
+EXPORT_SYMBOL uint64_t mnl_attr_get_uint(const struct nlattr *attr)
+{
+	switch (mnl_attr_get_payload_len(attr)) {
+	case sizeof(uint8_t):
+		return mnl_attr_get_u8(attr);
+	case sizeof(uint16_t):
+		return mnl_attr_get_u16(attr);
+	case sizeof(uint32_t):
+		return mnl_attr_get_u32(attr);
+	case sizeof(uint64_t):
+		return mnl_attr_get_u64(attr);
+	}
+
+	return -1ULL;
+}
+
+/**
  * mnl_attr_get_str - get pointer to string attribute
  * \param attr pointer to netlink attribute
  *
